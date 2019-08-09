@@ -1,0 +1,31 @@
+<!--顶部标题栏-->
+<top-bar hasBack="{{true}}"></top-bar>
+
+<view class="container animation-slide-bottom">
+  <card-title text="校园卡" sub-text="Campus Card"></card-title>
+  <view class="bg-blue margin shadow-md padding radius-lg">
+    <view class="card-content padding-bottom padding-top">
+      <view class="card-info padding">
+        <view class="card-info-money">
+          余额 ￥
+          <text class="card-info-value"> {{cardInfo.balance}} </text>
+        </view>
+      </view>
+      <view class="card-img text-xsl padding-bottom">
+        <text class="icon-card"></text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{loading}}">
+    <view class="bg-white margin shadow-md padding radius-lg card-detail">
+      <view class="card-content">
+        <view class="card-info-detail" wx:for="{{cardInfo.extraData}}">
+          <text class="card-detail-name">{{item.key}}</text>
+          <view class="card-detail-money">
+            <text class="card-detail-value">{{item.value}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

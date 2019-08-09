@@ -1,0 +1,103 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": false,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.6.4",
+	"appid": "wx195fc0b2361503df",
+	"projectname": "%E5%9F%BA%E4%BA%8EUUIA%E7%9A%84weNEU",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 6,
+			"list": [
+				{
+					"id": -1,
+					"name": "Table",
+					"pathName": "pages/table/table",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的界面",
+					"pathName": "pages/me/me",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "图书馆向导",
+					"pathName": "pages/library_index/library_index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "绑定",
+					"pathName": "pages/login_eone/login_eone",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "图书借阅",
+					"pathName": "pages/borrow/borrow",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "功能",
+					"pathName": "pages/functionality/functionality",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "news",
+					"pathName": "pages/news/news",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,24 @@
+/* pages/functionality/functionality.wxss */
+
+.functionality-grid-label {
+  color: #505050;
+  margin-top: 10rpx;
+  display: inline-block;
+  text-align: center;
+  font-size: 23rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  line-height: 1;
+  width: 100%
+}
+
+.functionality-grid-icon {
+  position: relative;
+  margin-top: 0 auto;
+  line-height: 70rpx;
+  font-size: 70rpx;
+  text-align: center;
+  width: 90rpx;
+  height: 82rpx;
+}

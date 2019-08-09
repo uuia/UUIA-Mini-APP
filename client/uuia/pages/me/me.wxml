@@ -1,0 +1,104 @@
+<!--顶部标题栏-->
+<top-bar hasBack="{{false}}"></top-bar>
+
+<view class="animation-slide-bottom">
+  <!-- 个人信息卡片 -->
+  <view class="bg-white margin shadow-md padding radius-lg" wx:if="{{isLoggedIn}}">
+    <view class="user-info">
+      <view class="info-hd">
+        <image class="user-avatar" src="{{img}}"  wx:if="{{loadingUserInfo}}"></image>
+        <view class="loading-state" wx:else>
+          <van-loading />
+        </view>
+        <view class="user-title">
+          <text class="user-name">{{userInfo.name}}</text>
+          <text class="user-id">{{userInfo.studentID}}</text>
+        </view>
+        <view class="time-box">
+          <text class="time-term">{{current.title}}</text>
+          <text class="time-now">第{{week}}周 - 星期{{weekday}}</text>
+        </view>
+      </view>
+      <view></view>
+      <view class="info-bd" wx:if="{{loadingUserInfo}}">
+        <view class="info-bd-left">
+          <text class="user-text">年级：{{userInfo.grade}}级</text>
+          <text class="user-text">班级：{{userInfo.studentClass}}班</text>
+        </view>
+        <view class="info-bd-right">
+          <text class="user-text">学院：{{userInfo.college}}</text>
+          <text class="user-text">专业：{{userInfo.major}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view wx:else>
+    <view class="bg-white margin shadow-md radius-lg animation-slide-bottom padding">
+      <navigator url="../login/login">
+        <empty-state title="请绑定账户后继续" description="点击此处绑定" icon="link">
+        </empty-state>
+      </navigator>
+    </view>
+  </view>
+
+  <!-- 选项列表 -->
+  <view class="bg-white margin shadow-md padding radius-lg" wx:if="{{isLoggedIn}}">
+    <view class="about-link" bindtap='login'>
+      <view class="more-btn">
+        <text class='icon-refresh'> 重新绑定</text>
+      </view>
+    </view>
+
+    <class class="about-link">
+      <button open-type='feedback'>
+        <view class="more-btn">
+          <view class='btn-text'>
+            <text class='icon-question'> 问题反馈</text>
+          </view>
+          <view class="btn-open">
+            <text class='icon-right'></text>
+          </view>
+        </view>
+      </button>
+    </class>
+  </view>
+
+  <view class="bg-white margin shadow-md padding radius-lg">
+    <navigator url="../about/about" class="about-link">
+      <view class="more-btn">
+        <view class='btn-text'>
+          <text class='icon-info'> 关于 {{appName}}</text>
+        </view>
+        <view class="btn-open">
+          <text class='icon-right'></text>
+        </view>
+      </view>
+    </navigator>
+
+    <navigator url="../reward/reward" class="about-link">
+      <view class="more-btn">
+        <view class='btn-text'>
+          <text class='icon-sponsor'> 打赏开发者</text>
+        </view>
+        <view class="btn-open">
+          <text class='icon-right'></text>
+        </view>
+      </view>
+    </navigator>
+
+    <view class="about-link" bindtap="manage">
+      <view class="more-btn">
+        <view class='btn-text'>
+          <text class='icon-settings'> 我的 UUIA</text>
+        </view>
+        <view class="btn-open">
+          <text class='icon-right'></text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--重新登录提示框-->
+<van-dialog id="van-dialog" />

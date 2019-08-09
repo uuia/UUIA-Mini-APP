@@ -1,0 +1,58 @@
+<!--uuia/pages/uuia/index/index.wxml-->
+<!-- 顶部标题栏 -->
+<top-bar hasBack="{{true}}" isTransparent="{{true}}"></top-bar>
+
+<view class="bg-white margin shadow-md padding radius-lg animation-slide-bottom">
+  <!-- 顶部小程序状态信息 -->
+  <view class="header">
+    <image class="logo" src="{{uuia.poweredBy}}" mode="aspectFit"></image>
+  </view>
+  <view class="content">
+    <view class="version">
+      <view class="version-title">
+        <text class="title-name">UUIA 基础库版本</text>
+        <text class="version-text text-blue">{{uuia.base}}</text>
+      </view>
+      <view bindtap="toggleLog">
+        <text class="version-log-link" wx:if="{{!showLog}}">开源</text>
+        <text class="version-log-link" wx:else>简介</text>
+      </view>
+    </view>
+
+    <!-- UUIA -->
+    <view class="describe" wx:if="{{!showLog}}">
+      <text class="desc-title">简介</text>
+      <text class="desc-content">UUIA 致力于依托开源社群之力用技术推动国内高校信息统合化发展建设，并用创意让每位高校师生感到快乐。\n感谢您使用 UUIA 联盟应用，我们保证您可以全权管理您的所有个人信息，使用一个 UUIA 账户即可畅行 UUIA 联盟各款应用。</text>
+
+      <!-- 找到我们 -->
+      <text class="desc-title">找到我们</text>
+      <view class="desc-list">
+        <text bindtap="copyText" data-text="{{item.content}}" class="desc-list-item" wx:for="{{contactList}}" wx:key="key">{{item.title}}: {{item.content}}</text>
+      </view>
+
+      <text class="desc-title">开启推送</text>
+      <text class="desc-content">欢迎您微信搜索「紫金葫芦」或者点击打开下方二维码扫描关注「紫金葫芦」微信服务号，开启推送，进一步获得 UUIA 更强大的能力。</text>
+        <image bindtap="previewImage" data-url="{{uuia.hulu}}"  src="{{uuia.hulu}}" mode="widthFix" style="width: 530rpx;"></image>
+    </view>
+
+    <!-- 更新日志 -->
+    <view class="describe" wx:else>
+      <text class="desc-title">开源</text>
+      <view>
+        <image src="https://img.shields.io/github/stars/uuia/UUIA?style=social" mode="widthFix" style="width: 180rpx;"></image>
+        <text class="desc-content">\nUUIA 是一个开源自由非盈利项目，为了 UUIA 社区更好的发展，我们诚挚邀请您访问我们的 Github 主页并为我们贡献一个 Star，祝您使用愉快。</text>
+      </view>
+
+      <!-- 正在使用 -->
+      <!-- <text class="desc-title">您正在使用 UUIA 联盟以下应用</text> -->
+    </view>
+  </view>
+
+  <!-- 底部版权信息 -->
+  <view class="footer">
+    <view class="footer-uuia">
+      <image src="{{uuia.logo}}"></image>
+      <text>Powered by UUIA | {{uuia.offical}}</text>
+    </view>
+  </view>
+</view>

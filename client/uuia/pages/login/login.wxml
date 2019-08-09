@@ -1,0 +1,52 @@
+<!-- 背景 -->
+<view class='bg-box' wx:if="{{showVideo}}">
+  <video binderror="videoErrorCallback" id="myVideo" src="{{appInfo.video}}" objectFit='cover' autoplay='true' loop='true' muted="true" enable-progress-gesture="{{false}}" show-play-btn="{{false}}" show-fullscreen-btn="{{false}}" controls="{{false}}" webkit-playsinline="true"
+    x-webkit-airplay="true" playsinline="true" x5-video-player-type="h5" x5-video-orientation="h5" x5-video-player-fullscreen="true" preload="auto" style='z-index: 1'>
+  </video>
+</view>
+
+<view style="z-index: 9999; height: 100%;">
+  <!-- 顶部标题栏 -->
+  <top-bar hasBack="{{true}}" isTransparent="{{true}}"></top-bar>
+
+  <view class="margin padding radius-lg animation-slide-bottom">
+    <view class="bd">
+      <form class="login-form">
+        <view class='padding'>
+          <text class="icon-link text-white" style='font-size: 48rpx'> {{bindType[index].comment}}账户绑定</text>
+        </view>
+        <view class="input-group radius-lg {{username_focus ? 'active' : ''}}">
+          <text class="icon-people input-label text-white"></text>
+          <input type="number" cursor-spacing="30" id="username" placeholder="账号" bindinput="usernameInput" bindfocus="inputFocus" bindblur="inputBlur" style='color: #ffffff' />
+        </view>
+        <view class="input-group radius-lg {{password_focus ? 'active' : ''}}">
+          <text class="icon-lock input-label text-white"></text>
+          <input password="true" cursor-spacing="30" id="password" placeholder="密码" bindinput="passwordInput" bindfocus="inputFocus" bindblur="inputBlur" style='color: #ffffff' />
+        </view>
+        <view class="login-help text-lg" bindtap="showHelp">
+          <text class='icon-question text-white'> 帮助</text>
+        </view>
+      </form>
+
+      <view class="confirm-btn radius-lg text-xxl padding-sm margin" bindtap="skip" wx:if="{{bindType[index].isSkip}}">
+        <text class='icon-pullright'> 跳过</text>
+      </view>
+
+      <view class="confirm-btn radius-lg text-xxl padding-sm margin" bindtap="bind">
+        <text class='icon-check'> 确认并继续</text>
+      </view>
+    </view>
+
+    <view class="help" id="help" wx:if="{{help_status}}" bindtap="tapHelp">
+      <view class="box">
+        <view class="box-hd">
+          <text class="box-title">帮助</text>
+          <text class="box-close icon-close text-xxl" bindtap="hideHelp"></text>
+        </view>
+        <view class="box-bd">
+          <text>欢迎使用 {{appInfo.name}} 微信小程序，请输入您对应的登录凭据完成绑定。</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

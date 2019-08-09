@@ -1,0 +1,57 @@
+<!--顶部标题栏-->
+<top-bar hasBack="{{true}}"></top-bar>
+
+<view class="bg-white margin shadow-md radius-lg animation-slide-bottom padding-top padding-bottom">
+  <van-row style='margin: 15rpx'>
+    <van-col span="5" class="text-sl text-right {{week <=1 ? 'text-grey':'text-black' }} " bindtap="last">
+      <text class="icon-pullleft"></text>
+    </van-col>
+    <van-col span="14">
+      <picker class="button-sp-area text-black" mode="selector" range="{{weeks}}" value="{{index}}" bindchange="listenerPickerSelected">
+        <view class='large-label center-label'>第 {{week}} 周
+          <text class="icon-unfold" style='font-size: 35rpx'></text>
+        </view>
+      </picker>
+    </van-col>
+    <van-col span="5" class="text-sl text-left {{week >=25 ? 'text-grey':'text-black' }}" bindtap='next'>
+      <text class="icon-pullright"></text>
+    </van-col>
+  </van-row>
+  <view class="table">
+    <view class="tr">
+      <view class="th idx"></view>
+      <view class="th" style='color:{{colorList[0]}};'>周日</view>
+      <view class="th" style='color:{{colorList[1]}};'>周一</view>
+      <view class="th" style='color:{{colorList[2]}};'>周二</view>
+      <view class="th" style='color:{{colorList[3]}};'>周三</view>
+      <view class="th" style='color:{{colorList[4]}};'>周四</view>
+      <view class="th" style='color:{{colorList[5]}};'>周五</view>
+      <view class="th" style='color:{{colorList[6]}};'>周六</view>
+    </view>
+  </view>
+  <view class="top-date">
+    <view class="tr">
+      <view class="th3 idx2"></view>
+      <view class="th2" wx:for="{{dateList}}" wx:key="key">{{item}}</view>
+    </view>
+  </view>
+  <block wx:for="{{[1,2,3,4,5,6]}}" wx:for-item="i" wx:key="td_key">
+    <view class="tr">
+      <view class="idx">{{sections[i-1]}}</view>
+      <block wx:for="{{[6,0,1,2,3,4,5]}}" wx:for-item="n" wx:key="listData_key">
+        <view wx:if="{{listData[n][i-1][0]==null}}">
+          <view class="td"></view>
+        </view>
+        <view wx:else>
+          <view class="td-shadow shadow-md bg-blue animation-scale-up"  style="animation-delay: {{i*0.05}}s;">
+            <text class="ggrid">{{listData[n][i-1][0]}}</text>
+            <text class="ggrid_location">{{listData[n][i-1][2]}}</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+  <view class='text-center refresh-tip padding-top'>
+    <text class='icon-question'></text> 课表有更新? 下拉刷新一下吧。
+  </view>
+</view>

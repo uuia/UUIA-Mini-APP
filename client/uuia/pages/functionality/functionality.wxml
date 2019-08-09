@@ -1,0 +1,22 @@
+<!-- 顶部标题栏 -->
+<top-bar hasBack="{{false}}"></top-bar>
+
+<!-- 滚动banner -->
+<banner-swipper></banner-swipper>
+
+<!-- 功能卡片 -->
+<view wx:for="{{functionList}}" wx:key="eng" class="animation-slide-bottom" style="animation-delay: 0.4s;">
+  <card-title text="{{item.title}}" sub-text="{{item.eng}}"></card-title>
+  <view class="bg-white margin shadow-md radius-lg padding-sm">
+    <view class='index-function-card'>
+      <view class="grid col-5 text-center">
+        <view wx:for="{{item.functions}}" wx:key="name" wx:for-item="function" data-url="{{function.url}}" bindtap="navigate" class="radius padding-sm" hover-class="weui-grid_active">
+          <view class="functionality-grid-icon">
+            <text class="{{function.icon}}"></text>
+          </view>
+          <view class="functionality-grid-label">{{function.name}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

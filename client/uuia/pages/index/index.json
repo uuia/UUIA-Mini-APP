@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "van-loading": "../../components/vant/loading/index"
+  }
+}

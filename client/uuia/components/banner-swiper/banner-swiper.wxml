@@ -1,0 +1,7 @@
+<swiper class="card-swiper square-dot animation-scale-up" indicator-dots="true" circular="true" autoplay="true" interval="3000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#505050" style="animation-delay: 0.2s;">
+  <swiper-item wx:for="{{banners}}" wx:key="swiper-{{item.id}}" class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item radius-lg shadow-md " bindtap="bannerTo" data-url="{{item.nav}}">
+      <image class='radius-lg' src="{{item.image}}" mode="aspectFill"></image>
+    </view>
+  </swiper-item>
+</swiper>

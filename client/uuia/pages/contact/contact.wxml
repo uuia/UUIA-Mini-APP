@@ -1,0 +1,15 @@
+<!--顶部标题栏-->
+<top-bar hasBack="{{true}}"></top-bar>
+
+<card-title text="通讯录" sub-text="Contact List"></card-title>
+<view>
+  <view wx:for="{{places}}" wx:key="key">
+    <navigator url='./detail/detail?place={{item}}' hover-class='none'>
+      <view class="bg-white margin shadow-md radius-lg animation-slide-bottom padding">
+        <view class="title text-xl">
+          <text class='icon-phone'>  {{item}}</text>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,66 @@
+<!--顶部标题栏-->
+<top-bar hasBack="{{true}}"></top-bar>
+
+<view class="bg-white margin shadow-md padding radius-lg animation-slide-bottom">
+  <!-- 顶部小程序状态信息 -->
+  <view class="header">
+    <image class="logo" src="{{appInfo.logo}}" mode="aspectFit"></image>
+  </view>
+  <view class="content">
+    <view class="version">
+      <view class="version-title">
+        <text class="title-name">{{appInfo.name}}</text>
+        <text class="version-text">{{appInfo.version}}</text>
+        <text class="version-text">{{appInfo.status}}</text>
+      </view>
+      <view bindtap="toggleLog">
+        <text class="version-log-link {{hasUpdated?'update-log':''}}" wx:if="{{!showLog}}">更新日志</text>
+        <text class="version-log-link" wx:else>简介</text>
+      </view>
+    </view>
+
+    <!-- 小程序简介 -->
+    <view class="describe" wx:if="{{!showLog}}">
+      <text class="desc-title">简介</text>
+      <view class="desc-list">
+        <text class="desc-list-item" bindtap='copyText' data-text="{{appInfo.offical}}">{{appInfo.name}}官网: <text class='link-text'>{{appInfo.offical}}</text></text>
+      </view>
+      <text class="desc-content">{{appInfo.name}}是一款微信小程序，它致力于帮助我们{{appInfo.schoolName}}的学生更方便地查询校内各类信息并提供其他实用有趣的校内服务。</text>
+      
+      <!-- 致谢 -->
+      <text class="desc-title">致谢</text>
+      <view class="desc-list">
+        <text class="desc-list-item" wx:for="{{thankList}}" wx:key="key">{{item}}</text>
+      </view>
+
+      <!-- 关联小程序 -->
+      <text class="desc-title">关联{{appInfo.name}}</text>
+      <view bindtap='copyText' data-text="{{appInfo.appId}}">
+        <text class="desc-content">若您或您的朋友在运营与{{appInfo.schoolName}}相关的公众号(学生组织/社团/校园自媒体等)，{{appInfo.name}}诚挚地欢迎您的公众号关联我们的小程序，并期待与您合作！\nAppID: <text class='link-text'>{{appInfo.appId}}</text> (点击复制)</text>
+      </view>
+    </view>
+
+    <!-- 更新日志 -->
+    <view class="log-list" wx:else>
+      <view class="describe" wx:for="{{updateLog}}" wx:key="key">
+        <view class="desc-title">
+          <text class="desc-v">{{item.version}}</text>
+          <text class="desc-time">{{item.time}}</text>
+        </view>
+        <text class="desc-content">{{item.subject}}</text>
+        <view class="desc-list" wx:for="{{item.items}}" wx:for-item="list">
+          <text class="desc-list-item">{{list}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部版权信息 -->
+  <view class="footer">
+    <text>©️ {{appInfo.year}} | {{appInfo.name}} · {{appInfo.offical}}</text>
+    <view class="footer-uuia">
+      <image src="{{uuia.logo}}"></image>
+      <text>Powered by UUIA | {{uuia.offical}}</text>
+    </view>
+  </view>
+</view>

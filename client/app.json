@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "uuia/pages/splash-screen/splash-screen",
+    
+    "uuia/pages/about/about",
+    "uuia/pages/calendar/calendar",
+    "uuia/pages/card/card",
+    "uuia/pages/contact/contact",
+    "uuia/pages/contact/detail/detail",
+    "uuia/pages/exam/exam",
+    "uuia/pages/functionality/functionality",
+    "uuia/pages/grade/grade",
+    "uuia/pages/index/index",
+    "uuia/pages/login/login",
+    "uuia/pages/me/me",
+    "uuia/pages/reward/reward",
+    "uuia/pages/table/table",
+    "uuia/pages/uuia/bind/bind",
+    "uuia/pages/uuia/index/index",
+    "uuia/pages/web/web"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#f1f1f1",
+    "backgroundColor": "#f1f1f1",
+    "navigationBarTitleText": "UUIA",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "color": "#404040",
+    "selectedColor": "#404040",
+    "list": [
+      {
+        "iconPath": "uuia/assets/images/core/tabbar/home.png",
+        "selectedIconPath": "uuia/assets/images/core/tabbar/home@select.png",
+        "pagePath": "uuia/pages/index/index",
+        "text": "速览"
+      },
+      {
+        "iconPath": "uuia/assets/images/core/tabbar/function.png",
+        "selectedIconPath": "uuia/assets/images/core/tabbar/function@select.png",
+        "pagePath": "uuia/pages/functionality/functionality",
+        "text": "百宝箱"
+      },
+      {
+        "iconPath": "uuia/assets/images/core/tabbar/user.png",
+        "selectedIconPath": "uuia/assets/images/core/tabbar/user@select.png",
+        "pagePath": "uuia/pages/me/me",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "top-bar": "uuia/components/top-bar/top-bar",
+    "card-title": "uuia/components/card-title/card-title",
+    "weather-card": "uuia/components/weather-card/weather-card",
+    "empty-state": "uuia/components/empty-state/empty-state",
+    "banner-swiper": "uuia/components/banner-swiper/banner-swiper"
+  },
+  "sitemapLocation": "sitemap.json"
+}

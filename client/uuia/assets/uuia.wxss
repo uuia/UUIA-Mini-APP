@@ -1,0 +1,92 @@
+
+page {
+  font-family: 'Bahnschrift' !important;
+  font-size: 10pt;
+  line-height: 150%;
+  min-height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: #f1f1f1;
+}
+
+.card-border-view {
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  border-radius: 15rpx;
+  color: #000;
+  margin-top: 0rpx;
+}
+
+.container {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+icon {
+  vertical-align: middle;
+}
+
+.large-label {
+  font-size: 48rpx;
+}
+
+.center-label {
+  text-align: center;
+}
+
+.last-info {
+  margin: 30rpx;
+  color: #888;
+  font-size: 26rpx;
+  text-align: justify;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin: 20rpx;
+}
+
+.loading-gif {
+  margin-top: 100rpx;
+}
+
+.card-list {
+  margin: 20rpx;
+}
+
+.card {
+  box-shadow: 4rpx 4rpx 10rpx #ddd;
+  border-radius: 0.2rem;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.shadow-md {
+  box-shadow: 0rpx 0rpx 30rpx 0rpx rgba(0, 0, 0, 0.07) !important;
+}
+
+.radius-lg {
+  border-radius: 20rpx;
+}
+
+.grid.col-5>navigator {
+  width: 20%;
+}
+
+.grid.col-3>button {
+  width: 33.33%;
+}
+
+.grid.col-3>navigator {
+  width: 33.33%;
+}

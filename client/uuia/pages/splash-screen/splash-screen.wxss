@@ -1,0 +1,75 @@
+/*defaults*/
+
+.text-center { text-align: center; }
+.text-left   { text-align: left;   }
+.text-right  { text-align: right;  }
+
+/*page style*/
+
+.container-exibition-text {
+  text-align: center;
+  font-size: 60rpx;
+}
+
+.container-exibition-text > view {
+  background-color: #0081ff;
+  margin: 10rpx;
+  color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 1px 1px 9px -3px #000;
+  display: inline-block;
+}
+
+.centered-content {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.btn-generate-code {
+  margin-top: 30px;
+}
+
+@keyframes wave-flash {
+  from, 20%, 40%, 60%, 80%, to {
+      animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+      opacity: 0;
+      transform: scale3d(.3, .3, .3);
+    }
+    20% {
+      transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+      transform: scale3d(.9, .9, .9);
+    }
+    60% {
+      transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+      opacity: 1;
+      transform: scale3d(.97, .97, .97);
+    }
+    to {
+      opacity: 1;
+      transform: scale3d(1, 1, 1);
+    }
+}
+
+.is-animate.wave-flash > view { animation-name: wave-flash; }
+
+.is-animate > view {
+  min-width: 100rpx;
+  max-width: 100rpx;
+  min-height: 100rpx;
+  max-height: 100rpx;
+  line-height: 100rpx;
+  animation-duration: 1.0s;
+  animation-fill-mode: both;
+}
+
+.is-animate > view:nth-child(1) { animation-delay: 0.2s }
+.is-animate > view:nth-child(2) { animation-delay: 0.3s }
+.is-animate > view:nth-child(3) { animation-delay: 0.4s }
+.is-animate > view:nth-child(4) { animation-delay: 0.5s }
+.is-animate > view:nth-child(5) { animation-delay: 0.6s }

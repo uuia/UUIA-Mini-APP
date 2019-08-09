@@ -1,0 +1,72 @@
+.main-card-item {
+  font-size: 25rpx;
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.main-card-item navigator {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-card-item#kb .card-item-bd {
+  padding: 0;
+  margin-right: 25rpx;
+}
+
+.card-item-bd {
+  padding: 20rpx 25rpx 0 0;
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.kb-item {
+  display: flex;
+  height: 120rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kb-item-left {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  padding-right: 30rpx;
+  overflow: hidden;
+}
+
+.kb-item-what {
+  font-size: 30rpx;
+  line-height: 200%;
+  color: #777;
+  white-space: nowrap;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.kb-item-w {
+  font-size: 14pt;
+  line-height: 200%;
+  color: #777;
+  white-space: nowrap;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.kb-item-when {
+  line-height: 125%;
+  color: #aaa;
+  font-size: 30rpx;
+}
+
+.kb-item-where {
+  flex: 0 0 auto;
+  font-size: 40rpx;
+  color: #999;
+  letter-spacing: 1px;
+}

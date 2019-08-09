@@ -1,0 +1,61 @@
+<view style="z-index: 9999; height: 100%;">
+  <!-- 顶部标题栏 -->
+  <top-bar hasBack="{{true}}" isTransparent="{{true}}"></top-bar>
+
+  <view class="margin padding radius-lg animation-slide-bottom">
+    <view class="bd">
+      <form class="login-form">
+        <view class='padding'>
+          <text class="icon-link text-white" style='font-size: 48rpx'> 绑定 UUIA 账户</text>
+        </view>
+
+        <!-- 输入绑定信息 -->
+        <view class="input-group radius-lg {{username_focus ? 'active' : ''}}" wx:if="{{!isActivating}}">
+          <text class="icon-people input-label text-white"></text>
+          <input type="number" cursor-spacing="30" id="username" placeholder="请输入您的邮箱" bindinput="usernameInput" bindfocus="inputFocus" bindblur="inputBlur" style='color: #ffffff' />
+        </view>
+        <view class="input-group radius-lg {{password_focus ? 'active' : ''}}" wx:if="{{!isActivating}}">
+          <text class="icon-lock input-label text-white"></text>
+          <input password="true" cursor-spacing="30" id="password" placeholder="请输入您的密码" bindinput="passwordInput" bindfocus="inputFocus" bindblur="inputBlur" style='color: #ffffff' />
+        </view>
+
+        <view class="radius-lg" wx:if="{{isActivating}}">
+          <view class='code-content'>
+            <block wx:for="{{Length}}" wx:key="item">
+              <input class='iptbox' value="{{Value.length>=index+1?Value[index]:''}}" disabled password='{{ispassword}}' catchtap='Tap'></input>
+            </block>
+          </view>
+
+          <input name="password" password="{{true}}" class='ipt' maxlength="{{Length}}" focus="{{isFocus}}" bindinput="Focus"></input>
+          <view class="res-message">
+            <text class="icon-info" wx:if="{{message.length > 0}}"> {{message}}</text>
+          </view>
+        </view>
+
+        <view class="login-help text-lg" bindtap="showHelp">
+          <text class='icon-question text-white'> 帮助</text>
+        </view>
+      </form>
+
+      <view class="confirm-btn radius-lg text-xxl padding-sm margin" bindtap="bind" wx:if="{{!isActivating}}">
+        <text class='icon-check'> 确认并继续</text>
+      </view>
+
+      <view class="confirm-btn radius-lg text-xxl padding-sm margin" bindtap="activate" wx:if="{{isActivating}}">
+        <text class='icon-check'> 激活</text>
+      </view>
+
+    </view>
+    <view class="help" id="help" wx:if="{{help_status}}" bindtap="tapHelp">
+      <view class="box">
+        <view class="box-hd">
+          <text class="box-title">帮助</text>
+          <text class="box-close icon-close text-xxl" bindtap="hideHelp"></text>
+        </view>
+        <view class="box-bd">
+          <text>UUIA 致力于依托开源社群之力用技术推动国内高校信息统合化发展建设，并用创意让每位高校师生感到快乐。\n感谢您使用 UUIA 联盟应用，我们保证您可以全权管理您的所有个人信息，使用一个 UUIA 账户即可畅行 UUIA 联盟各款应用。\n您也可以登录 uuia.info 查看更多。</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

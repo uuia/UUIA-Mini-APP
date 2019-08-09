@@ -1,0 +1,52 @@
+<!--顶部标题栏-->
+<top-bar hasBack="{{true}}"></top-bar>
+<card-title text="考试一览" sub-text="Exam Perf."></card-title>
+
+<view class="container">
+  <!-- 当前学期 -->
+  <view class="exam-header">
+    <view class="exam-text">
+      <text class="exam-header-title">{{semester.current.title}}</text>
+    </view>
+  </view>
+
+  <!-- 考试列表 -->
+  <view wx:if="{{loading}}">
+    <view wx:if="{{examInfo.courses.length == 0}}" class="bg-white margin-top margin-right margin-left shadow-md radius-lg animation-slide-bottom padding">
+      <empty-state title="无可查看的考试日程" description="本学期考试日程未出，请静候其现。" icon="magic">
+      </empty-state>
+    </view>
+
+    <view wx:else class="exam-class-ctn">
+      <block wx:for="{{examInfo.courses}}" wx:key="index">
+        <view class="exam-class-item {{item.open ? 'exam-item-show' : ''}}">
+          <view class="exam-hd" data-id="{{index}}" bindtap="slideDetail">
+            <view class="exam-hd-left">
+              <view class="exam-hd-name">
+                {{item.name}}
+              </view>
+              <view class="exam-hd-other">
+                {{item.time}}
+              </view>
+            </view>
+            <text class="exam-item-icon icon-unfold"></text>
+          </view>
+          <view class="exam-detail">
+            <view class="exam-detail-item">
+              <text class="exam-detail-label">课程号 </text>
+              <text class="exam-detail-content">{{item.courseCode}}</text>
+            </view>
+            <view class="exam-detail-item">
+              <text class="exam-detail-label">地点 </text>
+              <text class="exam-detail-content">{{item.place}}</text>
+            </view>
+            <view class="exam-detail-item" wx:for="{{item.extraData}}" wx:for-item="extra" wx:key="key">
+              <text class="exam-detail-label">{{extra.key}}</text>
+              <text class="exam-detail-content">{{extra.value}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

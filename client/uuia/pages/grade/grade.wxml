@@ -1,0 +1,56 @@
+<!-- 顶部标题栏 -->
+<top-bar hasBack="{{true}}"></top-bar>
+<card-title text="成绩一览" sub-text="Academic Perf."></card-title>
+
+<!-- 成绩信息总览卡片 -->
+<view class="bg-white margin-top margin-right margin-left shadow-md radius-lg animation-slide-bottom padding">
+  <view class="header">
+    <view class="title">
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{title}}">
+        <view class="picker">
+          {{title[index]}}
+          <view class="comment text-blue">
+            <text class='icon-refresh'> 点击切换</text>
+          </view>
+        </view>
+      </picker>
+    </view>
+    <view wx:if="{{loading}}">
+      <view class="info">
+        <view>
+          <text>当前绩点 </text>
+          <text class='text-blue'> {{gradeInfo.gpa}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 成绩列表 -->
+<view wx:if="{{loading}}">
+  <view wx:if="{{gradeInfo.courses.length == 0}}" class="bg-white margin-top margin-right margin-left shadow-md radius-lg animation-slide-bottom padding">
+    <empty-state title="无可查看的成绩" description="本学期成绩未出，请静候其现。" icon="magic">
+    </empty-state>
+  </view>
+
+  <view wx:else class="bg-white margin-top margin-right margin-left shadow-md radius-lg animation-slide-bottom padding">
+    <view class="grade-list">
+      <text>课程名</text>
+      <text>学分</text>
+      <view wx:for="{{gradeInfo.courses[0].extraData}}">
+        <text>{{item.key}}</text>
+      </view>
+      <text>总分</text>
+    </view>
+    <block wx:for="{{gradeInfo.courses}}" wx:key="key">
+      <view class="grade-list {{item.selected ? 'select' : ''}}">
+        <text>{{item.name}}</text>
+        <text>{{item.credit}}</text>
+        <view wx:for="{{item.extraData}}" wx:for-item="extra">
+          <text>{{extra.value}}</text>
+        </view>
+        <text>{{item.grade}}</text>
+      </view>
+    </block>
+  </view>
+</view>

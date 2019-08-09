@@ -1,0 +1,7 @@
+<!--顶部标题栏-->
+<top-bar hasBack="{{true}}"></top-bar>
+
+<card-title text="校历" sub-text="Campus Calendar"></card-title>
+<view class="bg-white margin shadow-md padding-sm radius-lg">
+  <image wx:for="{{url}}" wx:key="*this" src="{{item}}" mode="widthFix" style="width: 750rpx;" />
+</view>

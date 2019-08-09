@@ -1,0 +1,82 @@
+<!--顶部标题栏-->
+<top-bar hasBack="{{false}}"></top-bar>
+
+<view style='padding-top: 30rpx'>
+  <!-- 天气卡片 -->
+  <weather-card></weather-card>
+
+  <view wx:if="{{isLoggedIn}}">
+    <!-- 课表卡片 -->
+    <view class="bg-white margin shadow-md padding radius-lg animation-slide-bottom" style="animation-delay: 0.4s;">
+      <view class="main-card-item">
+        <view class='text-lg'>
+          <text class='icon-calendar'> 今日课表</text>
+        </view>
+        <navigator url="../table/table" class='radius'>
+          <!-- 加载状态 -->
+          <view wx:if="{{!loadingCourse}}">
+            <view class='loading'>
+              <van-loading />
+            </view>
+          </view>
+          <!-- 显示状态 -->
+          <view wx:else>
+            <!-- 今日无课 -->
+            <view wx:if="{{index == 0}}">
+              <empty-state title="今日无课" description="合理安排一下吧" icon="magic"></empty-state>
+            </view>
+            <!-- 今日有课 -->
+            <view wx:else>
+              <view wx:for="{{todayCourse}}" wx:key="key" wx:for-index="index">
+                <view class="card-item-bd" wx:if="{{item[0]!=null && item[1]!=null&&item[2]!=null}}">
+                  <view class="kb-item">
+                    <view class="kb-item-left">
+                      <text class="kb-item-what">{{item[0]}}</text>
+                      <text class="kb-item-when">{{(index+1)*2-1}}-{{(index+1)*2}}节</text>
+                    </view>
+                    <text class="kb-item-where">{{item[2]}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+
+    <!-- 校园卡卡片 -->
+    <view class="bg-white margin shadow-md padding radius-lg animation-slide-bottom" style="animation-delay: 0.6s;">
+      <view class="main-card-item">
+        <view class='text-lg'>
+          <text class='icon-pay'> 校园钱包</text>
+        </view>
+        <navigator url="../card/card" class="margin-top radius">
+          <view class='text-center padding'>
+            <view class='margin'>
+              <view class='margin-bottom' wx:if="{{loadingCardInfo}}">
+                <text class="text-lg">￥</text>
+                <br/>
+                <text class="text-xsl">{{cardInfo.balance}}</text>
+              </view>
+              <view class='margin-bottom' wx:else>
+                <van-loading />
+              </view>
+              <br/>
+              <text class='icon-card'> 校园卡钱包余额</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <!-- 未绑定账户 -->
+  <view wx:else>
+    <view class="bg-white margin shadow-md radius-lg animation-slide-bottom padding">
+      <navigator url="../login/login">
+        <empty-state title="请绑定账户后继续" description="点击此处绑定" icon="link">
+        </empty-state>
+      </navigator>
+    </view>
+  </view>
+</view>

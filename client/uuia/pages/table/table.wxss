@@ -1,0 +1,126 @@
+.table {
+  width: 100%;
+  height: 40rpx;
+  margin-top: 5rpx;
+}
+.top-date{
+  width: 100%;
+  height: 35rpx;
+  margin-bottom: 5rpx;
+}
+.tr {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+.th2 {
+  font-size: 25rpx;
+  padding: 0rpx 5rpx 5rpx;
+  width: 85rpx;
+  margin: 1rpx;
+  color: #bfbfbf;
+  text-align: center;
+}
+
+.weui__icon {
+  width: 65rpx;
+  height: 65rpx;
+}
+
+.right {
+  padding-right: 10rpx;
+}
+
+.l {
+  white-space: pre-line;
+}
+
+.th {
+  font-size: 30rpx;
+  padding: 0rpx 5rpx 5rpx;
+  width: 85rpx;
+  margin: 1rpx;
+  text-align: center;
+}
+
+.th-shadow {
+  font-size: 30rpx;
+  color: #fff;
+  padding: 10rpx 0;
+  background-color: #0068b7;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+.td {
+  font-size: 23rpx;
+  padding: 10rpx 5rpx;
+  width: 85rpx;
+  margin: 1rpx;
+  height: 150rpx;
+  background-color: #f8f8f8;
+  border-radius: 15rpx;
+  text-align: center;
+}
+
+.td-shadow {
+  font-size: 24rpx;
+  padding: 15rpx 5rpx 10rpx;
+  width: 85rpx;
+  height: 150rpx;
+  border-radius: 15rpx;
+  color: white;
+  /* color: #fff; */
+  text-align: center;
+  margin: 1rpx;
+}
+
+
+.lable.td {
+  border: 1rpx #dee1e8 solid;
+  border-radius: 15rpx;
+  box-shadow: 0 10rpx 35rpx #dee1e8;
+}
+
+.idx {
+  font-size: 30rpx;
+  width: 30rpx;
+  padding: 10rpx 0rpx 20rpx 0;
+}
+
+.idx2 {
+  width: 30rpx;
+  padding: 10rpx 0rpx 20rpx 0;
+}
+
+.ggrid {
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-height: 27rpx;
+  height: 100rpx;
+  min-height: 100rpx;
+  max-height: 100rpx;
+}
+
+.ggrid_location {
+  width: 100%;
+  line-height: 25rpx;
+  font-size: 19rpx;
+  padding-top: 2rpx;
+  border-top: dashed 1rpx #ffffff;
+  /* max-height: 40rpx; */
+}
+
+.refresh-tip{
+  color: #7A7A7A;
+}
+
+.card-border-view{
+  margin-bottom: 20rpx;
+}

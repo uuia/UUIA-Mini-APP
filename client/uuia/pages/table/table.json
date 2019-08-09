@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-search": "../../components/vant/search/index",
+    "van-panel": "../../components/vant/panel/index",
+    "van-row": "../../components/vant/row/index",
+    "van-col": "../../components/vant/col/index",
+    "van-toast": "../../components/vant/toast/index"
+  }
+}

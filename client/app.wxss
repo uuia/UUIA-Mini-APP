@@ -1,0 +1,5 @@
+@import "uuia/assets/colorui/main.wxss";
+@import "uuia/assets/colorui/icon.wxss";
+@import "uuia/assets/colorui/animation.wxss";
+@import "uuia/assets/font/bahnschrift.wxss";
+@import "uuia/assets/uuia.wxss";

@@ -1,0 +1,17 @@
+<!-- 顶部标题栏 -->
+<top-bar hasBack="{{true}}"></top-bar>
+<!-- 打赏卡片列表 -->
+<card-title text="开发者们" sub-text="Developers"></card-title>
+<view class="text-gray margin" style='text-align: justify'>
+  <text class='icon-emoji'> {{appName}} 作为一个非盈利性的校园信息统合平台，其开发工作亦以兴趣为导向。若您认可我们的工作，您可以点击下方查看对应开发者的赞赏码，请我们的开发者小哥哥喝一杯咖啡。</text>
+</view>
+<view class="bg-white margin shadow-md padding radius-lg animation-slide-bottom" style="animation-delay: 0.2s;" wx:for="{{developers}}" wx:for-item="developer" bindtap="previewImage" data-url="{{developer.rewardCodeUrl}}" wx:key="dev-{{developer.name}}">
+  <view class='padding-top padding-bottom'>
+    <text class='text-xxl'> {{developer.name}} \n</text>
+  </view>
+  <text class='text-gray'> {{developer.description}} \n</text>
+  <text class='text-lg'> “{{developer.slogan}}” \n</text>
+  <view class='padding text-center'>
+    <text class='icon-info text-sm'> 点击查看赞赏码，长按识别以打赏此开发者</text>
+  </view>
+</view>
